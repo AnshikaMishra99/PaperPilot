@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-paper text-ink font-ui antialiased;
+  }
+
+  :focus-visible {
+    outline: 2px solid theme('colors.pine.600');
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  /* One shared field style so inputs never drift apart visually. */
+  .field {
+    @apply w-full rounded-md border border-line bg-surface px-3 py-2 text-sm
+           placeholder:text-muted/70 focus:border-pine-500 focus:outline-none;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-4 py-2
+           text-sm font-medium transition-colors disabled:cursor-not-allowed
+           disabled:opacity-50;
+  }
+
+  .btn-primary {
+    @apply btn bg-pine-600 text-white hover:bg-pine-700;
+  }
+
+  .btn-quiet {
+    @apply btn border border-line bg-surface text-ink hover:border-pine-500 hover:text-pine-700;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

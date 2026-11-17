@@ -1,0 +1,26 @@
+# Secrets — never commit these
+.env
+*.env
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# Runtime data: vector store, uploaded PDFs, document registry
+backend/data/
+
+# Node
+node_modules/
+dist/
+.vite/
+npm-debug.log*
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
